@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vida de Gus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="language-selector">
+      <select id="language" onchange="traducirIdioma()">
+        <option value="en">English</option>
+        <option value="es" selected>Español</option>
+      </select>
+    </div>
+    <div class="menu">
+      <a id="nav-home" href="index.html"><strong>hogar</strong></a>
+      <a id="nav-projects" href="indexproject.html"><strong>Proyectos</strong></a>
+      <a id="nav-contact" href="indexcontact.html"><strong>Contáctame</strong></a>
+    </div>
+  </nav>
+
+  <section>
+    <img src="https://api.deepai.org/job-view-file/632f0e66-af39-4059-b05f-4768ca7653f7/outputs/output.jpg" alt="Gus Fring">
+    <h2 id="name">Gustavo Fring</h2>
+    <p><strong id="title">Desarrollador Web | Diseñador | Programador | Estratega</strong></p>
+    <p id="bio">¡Hola! Soy un desarrollador web dedicado con amplia experiencia en HTML, CSS, JavaScript y tecnologías relacionadas. Me apasiona diseñar y desarrollar sitios web modernos, intuitivos y altamente funcionales que combinan atractivo estético con una experiencia de usuario excepcional en todas las plataformas.</p>
+  </section>
+
+  <script>
+    function traducirIdioma() {
+      let idioma = document.getElementById("language").value;
+
+      if (idioma === "es") {
+        document.getElementById("name").innerText = "Gustavo Fring";
+        document.getElementById("title").innerText = "Desarrollador Web | Diseñador | Programador | Estratega";
+        document.getElementById("bio").innerText = "¡Hola! Soy un desarrollador web dedicado con amplia experiencia en HTML, CSS, JavaScript y tecnologías relacionadas. Me apasiona diseñar y desarrollar sitios web modernos, intuitivos y altamente funcionales que combinan atractivo estético con una experiencia de usuario excepcional en todas las plataformas.";
+
+        document.getElementById("nav-home").innerText = "Inicio";
+        document.getElementById("nav-projects").innerText = "Proyectos";
+        document.getElementById("nav-contact").innerText = "Contáctame";
+      } else {
+        document.getElementById("name").innerText = "Gustavo Fring";
+        document.getElementById("title").innerText = "Web Developer | Designer | Programmer | Mastermind";
+        document.getElementById("bio").innerText = "Hello! I am a dedicated web developer with extensive expertise in HTML, CSS, JavaScript, and related technologies, driven by a strong passion for designing and developing modern, intuitive, and highly user-friendly websites that combine aesthetic appeal with seamless functionality to ensure an exceptional user experience across all platforms.";
+
+        document.getElementById("nav-home").innerText = "Home";
+        document.getElementById("nav-projects").innerText = "Projects";
+        document.getElementById("nav-contact").innerText = "Contact Me";
+      }
+    }
+  </script>
+
+</body>
+</html>

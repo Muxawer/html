@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life of Gus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu">
+            <a href="index.html"><strong id="home">Home</strong></a>
+            <a href="indexproject.html"><strong id="projects">Projects</strong></a>
+            <a href="indexcontact.html"><strong id="contact">Contact Me</strong></a>
+        </div>
+        <div class="language-selector">
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+    </nav>
+
+    <section>
+        <h2 id="contact-heading">Contact</h2>
+        <p><span id="email-label">Email:</span> <a href="mailto:Atamusawer@gmail.com?subject=Hello!&body=I wanted to reach out..." id="email">atamusawer@gmail.com</a></p>
+        <p><span id="phone-label">Phone:</span> <a href="tel:+1234567890" id="phone">+601127184006</a></p>
+        <div class="social-links">
+            <a href="https://github.com/Muxawer" target="_blank" id="github">GitHub</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" id="linkedin">LinkedIn</a>
+            <a href="https://www.instagram.com/muxawer/" target="_blank" id="instagram">Instagram</a>
+        </div>
+    </section>
+
+    <script>
+        function changeLanguage() {
+            const language = document.getElementById('language').value;
+            
+            // English content
+            const enContent = {
+                home: 'Home',
+                projects: 'Projects',
+                contact: 'Contact Me',
+                'contact-heading': 'Contact',
+                'email-label': 'Email:',
+                email: 'atamusawer@gmail.com',
+                'phone-label': 'Phone:',
+                phone: '+601127184006',
+                github: 'GitHub',
+                linkedin: 'LinkedIn',
+                instagram: 'Instagram'
+            };
+            
+            // Spanish content
+            const esContent = {
+                home: 'Inicio',
+                projects: 'Proyectos',
+                contact: 'Contáctame',
+                'contact-heading': 'Contacto',
+                'email-label': 'Correo electrónico:',
+                email: 'atamusawer@gmail.com',
+                'phone-label': 'Teléfono:',
+                phone: '+601127184006',
+                github: 'GitHub',
+                linkedin: 'LinkedIn',
+                instagram: 'Instagram'
+            };
+
+            // Choose content based on language
+            const content = language === 'es' ? esContent : enContent;
+
+            // Update the page text content
+            document.getElementById('home').textContent = content.home;
+            document.getElementById('projects').textContent = content.projects;
+            document.getElementById('contact').textContent = content.contact;
+            document.getElementById('contact-heading').textContent = content['contact-heading'];
+            document.getElementById('email-label').textContent = content['email-label'];
+            document.getElementById('email').textContent = content.email;
+            document.getElementById('phone-label').textContent = content['phone-label'];
+            document.getElementById('phone').textContent = content.phone;
+            document.getElementById('github').textContent = content.github;
+            document.getElementById('linkedin').textContent = content.linkedin;
+            document.getElementById('instagram').textContent = content.instagram;
+        }
+    </script>
+</body>
+</html>
