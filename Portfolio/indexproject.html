@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life of Gus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu">
+            <a href="index.html"><strong id="home">Home</strong></a>
+            <a href="indexproject.html"><strong id="projects">Projects</strong></a>
+            <a href="indexcontact.html"><strong id="contact">Contact Me</strong></a>
+        </div>
+        <div class="language-selector">
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+    </nav>
+
+    <section>
+        <h2 id="projects-heading">Projects</h2>
+        <p id="intro-text">Here are some of my latest projects:</p>
+        <p>
+            <strong id="project1-title">Project 1:</strong>
+            <a href="https://www.calculator.net/scientific-calculator.html" id="project1-link">Operational Calculator</a>
+        </p>
+        <p>
+            <strong id="project2-title">Project 2:</strong>
+            <a href="https://github.com/Muxawer/Python-artwork.git" id="project2-link">Personal Blog Website</a>
+        </p>
+    </section>
+
+    <script>
+        function changeLanguage() {
+            const language = document.getElementById('language').value;
+
+            // English content
+            const enContent = {
+                'projects-heading': 'Projects',
+                'intro-text': 'Here are some of my latest projects:',
+                'project1-title': 'Project 1:',
+                'project1-link': 'Operational Calculator',
+                'project2-title': 'Project 2:',
+                'project2-link': 'Personal Blog Website'
+            };
+
+            // Spanish content
+            const esContent = {
+                'projects-heading': 'Proyectos',
+                'intro-text': 'Aquí están algunos de mis proyectos más recientes:',
+                'project1-title': 'Proyecto 1:',
+                'project1-link': 'Calculadora Operacional',
+                'project2-title': 'Proyecto 2:',
+                'project2-link': 'Sitio Web del Blog Personal'
+            };
+
+            // Choose content based on language
+            const content = language === 'es' ? esContent : enContent;
+
+            // Update the page text content
+            document.getElementById('projects-heading').textContent = content['projects-heading'];
+            document.getElementById('intro-text').textContent = content['intro-text'];
+            document.getElementById('project1-title').textContent = content['project1-title'];
+            document.getElementById('project1-link').textContent = content['project1-link'];
+            document.getElementById('project2-title').textContent = content['project2-title'];
+            document.getElementById('project2-link').textContent = content['project2-link'];
+        }
+    </script>
+</body>
+</html>
